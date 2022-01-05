@@ -40,6 +40,19 @@
                 )
             }
         }
+        class TheList extends React.Component{
+             render(){
+                 return(
+                    <div className ="dog-list">
+                        <TheDog nama = "doggy"/>
+                        <TheDog nama = " beagle"/>
+                        <TheDog nama = "bulldog"/>
+                        <TheDog nama = "golden"/>
+                    </div>
+                 )
+                 
+            }
+        }
         ReactDOM.render(<TheDog nama="doggy"/>,document.getElementById('app'))
     </script> 
  </body>

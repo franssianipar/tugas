@@ -1,6 +1,6 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,55 +10,91 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
-        .dog-list {
-             display: flex;
-             justify-content: space-around;
-             flex-wrap: wrap;
-        }
-        .dog-item {
-            width: 150px;
-            box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
-        }
-        .dog-item :hover{
-            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
-        }
-        .dog-item .image{
-            width: 150px;
-            height: 150px;
-        }
-        .dog-item .caption{
-            padding: 10px;
-        }  
+        .dog-list{
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+
+       }
+       .dog-item{
+           width: 150px;
+           box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
+           margin: 10px;
+
+       }
+       .dog-item :hover{
+           box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.2);
+
+       }
+       .dog-item .image{
+           width: 150px;
+           height: 150px;
+
+       }
+       .dog-item .caption{
+          padding: 10px;
+
+       }
     </style>
 </head>
 <body>
     <div id="app"></div>
     <script type = "text/babel">
         class TheDog extends React.Component{
+            constructor (props){
+               super()
+                this.state={
+                    Imagesrc:'./placeholder.png'
+                }
+                axios.get(`https://dog.ceo/api/breed/${props.nama}/images/random`)
+                .then(res =>{
+                    this.setState({
+                        Imagesrc:res.data.message
+                    })
+                }) 
+            }
+            
             render(){
                 return(
                     
                    <div className="dog-item">
-                       <img className ="image" src="./placeholder.png" />
-                       <div className = "caption">{this.props.nama}</div>
+                       <img className ="image" src={this.state.Imagesrc} />
+                       <div className ="caption">{this.props.nama}</div>
                    </div>
                 )
             }
         }
+        
         class TheList extends React.Component{
-             render(){
-                 return(
-                    <div className ="dog-list">
-                        <TheDog nama = "doggy"/>
-                        <TheDog nama = " beagle"/>
-                        <TheDog nama = "bulldog"/>
-                        <TheDog nama = "golden"/>
-                    </div>
-                 )
-                 
+            constructor(props){
+                super()
+                this.state={
+                    daftarAnjing:[]
+                }
+                axios.get('https://dog.ceo/api/breeds/list/all')
+                .then(res =>{
+                    this.setState({
+                        daftarAnjing : Object.keys (res.data.message)
+                    })
+                })
             }
-        }
-        ReactDOM.render(<TheList/>,document.getElementById('app'))
-    </script> 
- </body>
- </html>
+            
+            render(){
+               return(
+                <div className = "dog-list">
+                   {
+                       this.state.daftarAnjing.map(el=>{
+                           return<TheDog key = {el} nama ={el}/>
+                       })
+                   }
+
+                   </div>
+               )}
+            }
+
+        ReactDOM.render(<TheList />,document.getElementById('app'))
+    </script>
+
+    
+</body>
+</html>

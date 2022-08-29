@@ -32,13 +32,115 @@
 
        }
        .dog-item .caption{
-          padding: 10px;
+          padding: 20px;
 
        }
+
+       header{
+        text-align: center;
+        font-size: 100px;
+        font-family: 'Times New Roman', Times, serif;
+       }
+       
+       nav{
+        width: 100%;
+       }
+       ul {
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #dddddd;
+        }
+
+        li {
+        float: left;
+        }
+
+        li a {
+        display: block;
+        padding:10px;
+        
+        padding-left: 100px;
+        
+        }
+
+        .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #dddddd;
+        color: black;
+        text-align: center;
+        }
+        aside {
+        width: 40%;
+        height: 1000px;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-top: 50px;
+        margin-left: 15px;
+        float: right;
+        font-style: italic;
+        background-color: lightgray;
+        
+        }
+    .profil{
+        text-align: center;
+        margin-top: 30%;
+    }
+
     </style>
 </head>
 <body>
+    <header> International The Dog Day</header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Sejarah Hari Anjing Internasional atau International Dog Day</h1>
+    </main>
+    <article>
+        <p>Awalnya, Hari Anjing Internasional diciptakan pada tahun 2004 oleh Colleen Paige, Ahli Gaya Hidup Hewan Peliharaan & Keluarga dan Advokat Hewan.
+            Dia menciptakan Hari Anjing Internasional agar semua anjing dapat dirayakan dan juga untuk menarik perhatian pada jumlah anjing di tempat penampungan.
+            menemukan tempat untuk tinggal. 26 Agustus adalah tanggal penting bagi Colleen, karena tanggal ini adalah hari keluarganya mengadopsi anjingnya yang bernama Sheltie saat Colleen masih berusia 10 tahun.
+            Sejak perayaan pertama pada tahun 2004, Hari Anjing Internasional telah berkembang dan sekarang dirayakan di seluruh dunia.Pada tahun 2013, Hari Anjing Internasinal dijadikan hari libur setelah masuk 
+            dalam perundang-undangan New York dan dapat dilihat di situs web Senat Negara Bagian New York.Di sisi lain, Colleen Paige, pendiri Hari Anjing Internasional, juga menggunakan hari itu untuk menarik perhatian pada berbagai cara anjing berkontribusi terhadap masyarakat.
+            Dari mempertaruhkan nyawa mereka untuk membantu penegak hukum melacak bom atau pengedar narkoba hingga memberikan bantuan bagi mereka yang membutuhkan, anjing memainkan peran penting.
+            Bahkan, saat ini ada juga anjing yang memiliki kemampuan untuk mengidentifikasi kanker pada pasien.Hari Anjing Internasional juga telah menggunakan platformnya untuk mendorong kepemilikan anjing dari semua ras, campuran atau murni, dan terus mendorong agar semua anjing diizinkan untuk hidup bahagia dan bebas dari penyiksaan.
+            Popularitas Hari Anjing Internasional terus meningkat setiap tahunnya. Hal itu dapat dilihat dari liputan di media secara luas.
+            Sedangkan rumah penampungan hewan adalah paparan yang sangat penting yang mereka butuhkan untuk menyampaikan pesan media. Untuk ikut merayakan, kalian dapat memilih untuk merayakan dengan menjadi sukarelawan di rumah penampungan hewan.
+            Termasuk memberikan sumbangan ke tempat penampungan, atau dengan memberi hewan peliharaan kalian sebuah pelukan ekstra, pastikan kalian menghabiskan hari ini untuk mengakui betapa luar biasanya seekor anjing
+        </p>
+
+    </article>
+    <aside>
+        <div class="profil">
+            <img src="rsz_191111151.jpg" alt="">
+            <div>Nama : frans glendly manuel sianipar</div>
+            <div>Alamat : JL.Pendidikan 1 No 16 Pasar 12 DUSUN XVIII</div>
+            <div>RT/RW : 000/000</div>
+            <div>Kelurahan/Desa : Bandar Klippa</div>
+            <div>Kecamatan : Percut Sei Tuan</div>
+            <div>Agama : Kristen Protestan</div>
+            <div>Tempat Lahir : Surabaya</div>
+            <div>Pekerjaan: Mahasiswa</div>
+            <div>Tanggal Lahir : 28 Januari 1999</div>
+        </div>
+    </aside>
     <div id="app"></div>
+    <footer>
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </footer>
     <script type = "text/babel">
         class TheDog extends React.Component{
             constructor (props){
@@ -94,7 +196,5 @@
 
         ReactDOM.render(<TheList />,document.getElementById('app'))
     </script>
-
-    
 </body>
 </html>
